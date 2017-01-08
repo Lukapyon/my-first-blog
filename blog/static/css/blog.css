@@ -1,14 +1,14 @@
 h1 a {
     color: #FCA205;
-    font-family: 'Lobster';
+    font-family: 'Playfair Display SC', serif;
 }
 
 body {
-    padding-left: 15px;
+    background-image: url("linedpaper.png");
 }
 
 .page-header {
-    background-color: #ff9400;
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(255,0,0,0));
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -24,7 +24,11 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Philosopher', sans-serif;
+}
+
+p {
+  font-family: 'PT Sans', sans-serif;
 }
 
 .date {
