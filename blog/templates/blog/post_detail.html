@@ -12,9 +12,7 @@
         {% endif %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
-        <input id="likes" value="0" />
-        <button id="yes" onclick="modify_likes(1)"><span class="glyphicon glyphicon-thumbs-up"></span>It's ok</button>
-        <input id="dislikes" value="0" />
-        <button id="no" onclick="modify_dislikes(1)"><span class="glyphicon glyphicon-thumbs-down"></span>That's horrible.</button>
+        <button id="yes" onclick="modify_likes(1)"><input id="likes" value="0" /><span class="glyphicon glyphicon-thumbs-up"></span>It's ok</button>
+        <button id="no" onclick="modify_dislikes(1)"><input id="dislikes" value="0" /><span class="glyphicon glyphicon-thumbs-down"></span>That's horrible.</button>
     </div>
 {% endblock %}
