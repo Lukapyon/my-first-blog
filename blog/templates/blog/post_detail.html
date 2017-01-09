@@ -2,22 +2,20 @@
 
 {% block content %}
   <script type="text/javascript">
-  function modify_likes() {
-      var likes = document.getElementById('likes').value;
-      var new_likes = parseInt(likes,10) + 1;
+    var likes = 0;
+    var dislikes = 0;
 
-      document.getElementById('likes').innerHTML = new_likes;
-      return new_likes;
-  }
+    function modify_likes(){
+      likes += 1;
+      document.getElementById("likes").innerHTML = likes;
+    }
 
-  function modify_dislikes() {
-      var dislikes = document.getElementById('dislikes').value;
-      var new_dislikes = parseInt(dislikes,10) + 1;
-
-      document.getElementById('dislikes').innerHTML = new_dislikes;
-      return new_dislikes;
-  }
+    function modify_dislikes(){
+      dislikes += 1;
+      document.getElementById("dislikes").innerHTML = dislikes;
+    }
     </script>
+
     <div class="post">
         {% if post.published_date %}
             <div class="date">
@@ -28,10 +26,10 @@
         <p>{{ post.text|linebreaksbr }}</p>
         <button type="button" class ="btn btn-primary" id="yes" onclick="modify_likes()">
           <span class="glyphicon glyphicon-thumbs-up"></span> It's ok
-        </button> <p id="likes">0</p>
+        </button> <p><span id="likes">0</span> says this is ok.</p>
         <button type="button" class ="btn btn-danger" id="no" onclick="modify_dislikes()">
           <span class="glyphicon glyphicon-thumbs-down"></span> That's horrible.
-        </button> <p id="dislikes">0</p>
+        </button> <p><span id="dislikes">0</span> says this is horrible.</p>
 
     </div>
 {% endblock %}
