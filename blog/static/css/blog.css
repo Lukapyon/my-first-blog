@@ -66,8 +66,12 @@ p {
 
 .glyphicon-thumbs-up {
   font-size: 30px;
+  display: inline-flex;
+  vertical-align: middle;
 }
 
 .glyphicon-thumbs-down {
   font-size: 30px;
+  display: inline-flex;
+  vertical-align: middle;
 }

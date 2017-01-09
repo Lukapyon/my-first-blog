@@ -1,18 +1,37 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+  <script type="text/javascript">
+  function modify_likes() {
+      var likes = document.getElementById('likes').value;
+      var new_likes = parseInt(likes,10) + 1;
+
+      document.getElementById('likes').innerHTML = new_likes;
+      return new_likes;
+  }
+
+  function modify_dislikes() {
+      var dislikes = document.getElementById('dislikes').value;
+      var new_dislikes = parseInt(dislikes,10) + 1;
+
+      document.getElementById('dislikes').innerHTML = new_dislikes;
+      return new_dislikes;
+  }
+    </script>
     <div class="post">
         {% if post.published_date %}
             <div class="date">
                 {{ post.published_date }}
             </div>
         {% endif %}
-        {% if user.is_authenticated %}
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
-        {% endif %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
-        <button id="yes" onclick="modify_likes(1)"><input id="likes" value="0" /><span class="glyphicon glyphicon-thumbs-up"></span>It's ok</button>
-        <button id="no" onclick="modify_dislikes(1)"><input id="dislikes" value="0" /><span class="glyphicon glyphicon-thumbs-down"></span>That's horrible.</button>
+        <button type="button" class ="btn btn-primary" id="yes" onclick="modify_likes()">
+          <span class="glyphicon glyphicon-thumbs-up"></span> It's ok
+        </button> <p id="likes">0</p>
+        <button type="button" class ="btn btn-danger" id="no" onclick="modify_dislikes()">
+          <span class="glyphicon glyphicon-thumbs-down"></span> That's horrible.
+        </button> <p id="dislikes">0</p>
+
     </div>
 {% endblock %}
